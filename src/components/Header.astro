@@ -90,7 +90,7 @@ const currentPath = Astro.url.pathname;
           {'children' in item && (
             <ul class="pl-4 mt-1 space-y-1">
               {item.children.map((child) => (
-                <li><a href={child.href} class="block py-1.5 text-sm text-text-light hover:text-primary">{child.label}</a></li>
+                <li><a href={`${base}${child.href.slice(1)}`} class="block py-1.5 text-sm text-text-light hover:text-primary">{child.label}</a></li>
               ))}
             </ul>
           )}
