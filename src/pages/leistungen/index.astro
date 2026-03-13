@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import { leistungen } from '../../data/site';
+---
+
+<Base
+  title="Leistungen"
+  description="Orthopädische Maßschuhe, Einlagen, BIOPATHOTEC Schmerzkonzept, Bewegungsanalyse und mehr — alle Leistungen der OrthoFit Schuhtechnik in Magdeburg."
+>
+  <section class="bg-primary text-white py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="font-heading text-3xl md:text-4xl font-bold mb-4">Unsere Leistungen</h1>
+      <p class="text-white/80 text-lg">Von der Analyse bis zur fertigen Versorgung — alles aus einer Hand in Magdeburg.</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {leistungen.map((l) => (
+        <a href={`/leistungen/${l.slug}/`} class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group">
+          <div class="text-4xl mb-4">{l.icon}</div>
+          <h2 class="font-heading text-xl font-bold text-primary group-hover:text-primary-light transition-colors mb-3">{l.title}</h2>
+          <p class="text-text-light text-sm leading-relaxed">{l.kurz}</p>
+          <span class="inline-block mt-4 text-sm text-primary font-medium group-hover:text-primary-light">Mehr erfahren &rarr;</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

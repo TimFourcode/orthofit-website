@@ -1,0 +1,105 @@
+---
+import { site, standorte } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+}
+
+const { title, description, canonical, type = 'website', noindex = false } = Astro.props;
+const pageTitle = title === 'Start' ? `${site.name} – ${site.tagline}` : `${title} | ${site.name}`;
+const canonicalUrl = canonical || new URL(Astro.url.pathname, Astro.site).href;
+
+const magdeburg = standorte[0];
+const schoenhausen = standorte[1];
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalBusiness',
+  '@id': canonicalUrl,
+  name: site.name,
+  description: site.description,
+  url: 'https://www.orthofit-schuhtechnik.de',
+  telephone: site.phone,
+  email: site.email,
+  faxNumber: site.fax,
+  founder: {
+    '@type': 'Person',
+    name: site.owner,
+    jobTitle: site.ownerTitle,
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: magdeburg.street,
+    postalCode: magdeburg.zip,
+    addressLocality: magdeburg.city,
+    addressRegion: 'Sachsen-Anhalt',
+    addressCountry: 'DE',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 52.1277,
+    longitude: 11.6292,
+  },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday', opens: '09:00', closes: '13:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Monday', opens: '15:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Wednesday', opens: '09:00', closes: '13:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday', opens: '09:00', closes: '13:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Thursday', opens: '15:00', closes: '18:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '09:00', closes: '13:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '15:00', closes: '18:00' },
+  ],
+  sameAs: [site.social.facebook, site.social.instagram],
+  areaServed: [
+    { '@type': 'City', name: 'Magdeburg' },
+    { '@type': 'State', name: 'Sachsen-Anhalt' },
+    { '@type': 'City', name: 'Schönhausen' },
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Orthopädie-Schuhtechnik Leistungen',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Orthopädische Maßschuhe' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Individuelle Einlagenversorgung' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'BIOPATHOTEC Schmerzkonzept' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Computergestützte Bewegungsanalyse' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Schuhzurichtung' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Diabetiker-Versorgung' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Rheumatiker-Versorgung' } },
+    ],
+  },
+};
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{pageTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:locale" content="de_DE" />
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="DE-ST" />
+<meta name="geo.placename" content="Magdeburg" />
+<meta name="geo.position" content="52.1277;11.6292" />
+<meta name="ICBM" content="52.1277, 11.6292" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />

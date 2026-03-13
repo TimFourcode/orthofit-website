@@ -1,0 +1,58 @@
+---
+import Base from './Base.astro';
+import { site, leistungen } from '../data/site';
+
+interface Props {
+  title: string;
+  description: string;
+  icon: string;
+}
+
+const { title, description, icon } = Astro.props;
+const currentSlug = Astro.url.pathname.replace('/leistungen/', '').replace('/', '');
+const andereLeistungen = leistungen.filter(l => l.slug !== currentSlug).slice(0, 3);
+---
+
+<Base title={`${title} – Magdeburg`} description={description}>
+  <!-- Hero -->
+  <section class="bg-primary text-white py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-5xl mb-4">{icon}</div>
+      <h1 class="font-heading text-3xl md:text-4xl font-bold mb-4">{title}</h1>
+      <p class="text-white/80 text-lg max-w-2xl">{description}</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 prose prose-lg max-w-none">
+      <slot />
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 bg-bg-alt">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-heading text-2xl font-bold text-primary mb-4">Interesse an {title}?</h2>
+      <p class="text-text-light mb-6">Rufen Sie uns an — wir beraten Sie persönlich und vereinbaren einen Termin.</p>
+      <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="inline-block bg-primary text-white font-semibold px-8 py-4 rounded-lg hover:bg-primary-light transition-colors text-lg">
+        {site.phone}
+      </a>
+    </div>
+  </section>
+
+  <!-- Weitere Leistungen -->
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h3 class="font-heading text-xl font-bold text-primary mb-6">Weitere Leistungen</h3>
+      <div class="grid sm:grid-cols-3 gap-4">
+        {andereLeistungen.map((l) => (
+          <a href={`/leistungen/${l.slug}/`} class="bg-bg-alt rounded-lg p-4 hover:shadow-md transition-shadow group">
+            <div class="text-2xl mb-2">{l.icon}</div>
+            <h4 class="font-semibold text-primary group-hover:text-primary-light text-sm">{l.title}</h4>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

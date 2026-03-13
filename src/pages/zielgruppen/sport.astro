@@ -1,0 +1,221 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site, standorte } from '../../data/site';
+---
+
+<Base
+  title="Sporteinlagen & Laufanalyse – Magdeburg"
+  description="Sporteinlagen und computergestützte Laufanalyse in Magdeburg. Individuelle Einlagen für Läufer, Fußballer, Wanderer und alle Sportarten — angepasst an Ihre Füße, Ihren Sport und Ihre Ziele."
+>
+  <!-- Hero -->
+  <section class="bg-primary text-white py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-accent font-medium mb-3">Für Sportlerinnen und Sportler</p>
+      <h1 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-6">
+        Sporteinlagen & Bewegungsanalyse
+      </h1>
+      <p class="text-white/85 text-lg max-w-2xl leading-relaxed">
+        Ihre Füße tragen Sie bei jedem Schritt, bei jedem Sprint, bei jedem Sprung. Wir sorgen dafür,
+        dass sie optimal unterstützt werden — mit individuellen Sporteinlagen, abgestimmt auf Ihre
+        Fußdaten, Ihre Konstitution und Ihren Sport.
+      </p>
+    </div>
+  </section>
+
+  <!-- Einleitung -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary mb-6">
+        Mehr als eine Standard-Einlage
+      </h2>
+      <p class="text-text-light leading-relaxed mb-4">
+        Sporteinlagen von OrthoFit sind keine Einlagen von der Stange. Wir fertigen jede Einlage
+        individuell — auf Basis Ihrer persönlichen Fußdaten, Ihrer körperlichen Konstitution,
+        Ihres Trainingsumfangs und Ihrer sportlichen Ambitionen.
+      </p>
+      <p class="text-text-light leading-relaxed mb-4">
+        Ob ambitionierter Marathonläufer, Freizeitsportler oder Wiedereinsteiger nach einer Verletzung:
+        Wir analysieren Ihren Bewegungsapparat und entwickeln eine Versorgung, die exakt zu Ihrer
+        aktuellen Situation passt.
+      </p>
+      <p class="text-text-light leading-relaxed">
+        Dabei berücksichtigen wir auch die Phase, in der Sie sich befinden — vom Trainingsaufbau
+        über die Wettkampfvorbereitung bis zur Regeneration nach Verletzungen. Die Anforderungen
+        an eine Sporteinlage ändern sich mit Ihrem Trainingsstand, und wir passen die Versorgung
+        entsprechend an.
+      </p>
+    </div>
+  </section>
+
+  <!-- Phasengerechte Versorgung -->
+  <section class="py-16 bg-bg-alt">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary mb-8">
+        Phasengerechte Fußversorgung
+      </h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Aufbauphase</h3>
+          <p class="text-sm text-text-light leading-relaxed">
+            Stabilisierung und Führung des Fußes beim Trainingsaufbau. Besondere Unterstützung
+            für Einsteiger und Wiedereinsteiger.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Leistungsphase</h3>
+          <p class="text-sm text-text-light leading-relaxed">
+            Optimierung der Kraftübertragung und Bewegungseffizienz für Wettkampf und
+            leistungsorientiertes Training.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="font-heading text-lg font-bold text-primary mb-2">Regeneration</h3>
+          <p class="text-sm text-text-light leading-relaxed">
+            Entlastung und Schutz nach Verletzungen oder bei Überlastungsbeschwerden.
+            Begleitung auf dem Weg zurück in den Sport.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sportartspezifische Einlagen -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary mb-4">
+        Sportartspezifische Einlagen
+      </h2>
+      <p class="text-text-light leading-relaxed mb-8">
+        Jede Sportart stellt andere Anforderungen an den Fuß. Laufen erfordert eine andere Versorgung
+        als Fußball, Wandern oder Tennis. Wir fertigen Einlagen, die auf die spezifischen Belastungen
+        Ihrer Sportart abgestimmt sind:
+      </p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {[
+          { sport: 'Laufen & Joggen', beschreibung: 'Dämpfung, Führung und Stabilität für hohe Laufumfänge und verschiedene Untergründe.' },
+          { sport: 'Fußball & Hallensport', beschreibung: 'Flache, reaktionsschnelle Einlagen für schnelle Richtungswechsel und engen Schuhkontakt.' },
+          { sport: 'Wandern & Trekking', beschreibung: 'Komfort und Stabilität für lange Distanzen mit schwerem Gepäck auf unebenem Terrain.' },
+          { sport: 'Radsport', beschreibung: 'Optimierung der Kraftübertragung am Pedal und Stabilisierung des Fußgewölbes.' },
+          { sport: 'Tennis & Badminton', beschreibung: 'Laterale Stabilität für schnelle Seitwärtsbewegungen und Stoppbewegungen.' },
+          { sport: 'Ski & Wintersport', beschreibung: 'Passgenaue Einlagen für optimale Kontrolle und Wärmemanagement im Skischuh.' },
+        ].map((item) => (
+          <div class="flex gap-3 p-4 bg-bg-alt rounded-lg">
+            <div class="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></div>
+            <div>
+              <h3 class="font-semibold text-text mb-1">{item.sport}</h3>
+              <p class="text-sm text-text-light">{item.beschreibung}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Bewegungsanalyse -->
+  <section class="py-16 bg-bg-alt">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary mb-6">
+        Computergestützte Bewegungsanalyse
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <p class="text-text-light leading-relaxed mb-4">
+            Die Grundlage jeder Sporteinlage ist eine umfassende Analyse Ihres Bewegungsapparats.
+            Mit unserer computergestützten 2D-Videoanalyse erfassen wir Ihre Bewegungsmuster beim
+            Gehen und Laufen in verschiedenen Geschwindigkeiten.
+          </p>
+          <p class="text-text-light leading-relaxed mb-4">
+            Die Analyse zeigt uns Achsabweichungen, Ausweichbewegungen und muskuläre Dysbalancen,
+            die im Alltag oft nicht auffallen, aber unter sportlicher Belastung zu Beschwerden führen können.
+          </p>
+          <p class="text-text-light leading-relaxed">
+            Zusammen mit der statischen und dynamischen Fußdruckmessung ergibt sich ein vollständiges
+            Bild Ihrer individuellen Biomechanik — die Grundlage für eine passgenaue Versorgung.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="font-heading text-lg font-bold text-primary mb-4">Unsere Analysemethoden</h3>
+          <ul class="space-y-3">
+            {[
+              '2D-Videoanalyse des Gangbildes',
+              'Laufbandanalyse in verschiedenen Geschwindigkeiten',
+              'Statische Fußdruckmessung',
+              'Dynamische Druckverteilungsmessung',
+              'Achsvermessung der unteren Extremitäten',
+              'Beurteilung der Muskelbalance und Beweglichkeit',
+            ].map((methode) => (
+              <li class="flex items-start gap-2 text-sm text-text-light">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                {methode}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Was mitbringen -->
+  <section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary mb-6">
+        Was Sie zum Termin mitbringen sollten
+      </h2>
+      <div class="bg-bg-alt rounded-xl p-6 md:p-8">
+        <ul class="space-y-4">
+          {[
+            { titel: 'Sportschuhe', text: 'Bringen Sie die Schuhe mit, in denen Sie die Einlagen tragen möchten.' },
+            { titel: 'Kurze Sportkleidung', text: 'Für die Bewegungsanalyse benötigen wir freie Sicht auf Beine und Füße (kurze Hose und Sportshirt).' },
+            { titel: 'Ärztliche Verordnung (falls vorhanden)', text: 'Wenn Sie eine Verordnung vom Orthopäden haben, bringen Sie diese bitte mit.' },
+            { titel: 'Bisherige Einlagen', text: 'Falls Sie bereits Einlagen tragen, bringen Sie diese zum Vergleich mit.' },
+            { titel: 'Zeit', text: 'Planen Sie ca. 45–60 Minuten für die Erstanalyse ein — wir nehmen uns die Zeit, die Sie brauchen.' },
+          ].map((item) => (
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-primary shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+              <div>
+                <span class="font-semibold text-text">{item.titel}</span>
+                <span class="text-text-light"> — {item.text}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary text-white text-center">
+    <div class="max-w-2xl mx-auto px-4">
+      <h2 class="font-heading text-3xl font-bold mb-4">Termin für Ihre Sporteinlagen</h2>
+      <p class="text-white/80 mb-8 leading-relaxed">
+        Rufen Sie uns an und vereinbaren Sie einen Termin für Ihre persönliche Bewegungsanalyse.
+        Wir beraten Sie unverbindlich und finden die optimale Versorgung für Ihren Sport.
+      </p>
+      <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="inline-block bg-accent text-primary-dark font-semibold px-10 py-4 rounded-lg hover:bg-accent-light transition-colors text-lg">
+        Jetzt anrufen: {site.phone}
+      </a>
+      <p class="text-white/60 text-sm mt-4">
+        Oder besuchen Sie uns in Magdeburg — Universitätsplatz 11
+      </p>
+    </div>
+  </section>
+</Base>

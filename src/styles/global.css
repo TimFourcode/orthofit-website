@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1a5632;
+  --color-primary-light: #2d7a4a;
+  --color-primary-dark: #0f3d22;
+  --color-accent: #c8a951;
+  --color-accent-light: #dcc573;
+  --color-bg: #fafaf8;
+  --color-bg-alt: #f0ede6;
+  --color-text: #2c2c2c;
+  --color-text-light: #5a5a5a;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Playfair Display', Georgia, serif;
+}

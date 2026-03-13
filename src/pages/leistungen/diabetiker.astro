@@ -1,0 +1,37 @@
+---
+import Leistung from '../../layouts/Leistung.astro';
+---
+
+<Leistung title="Diabetiker-Versorgung" description="DIABETEC Fußversorgungskonzept zum Schutz des diabetischen Fußes — in Magdeburg." icon="🩺">
+  <h2 class="font-heading text-2xl font-bold text-primary mb-4">Zuverlässiger Schutz für den diabetischen Fuß</h2>
+  <p class="text-text-light leading-relaxed mb-6">
+    Das diabetische Fußsyndrom erfordert besondere Aufmerksamkeit und spezialisierte Versorgung. Bei OrthoFit in Magdeburg setzen wir das DIABETEC Fußversorgungskonzept ein, um Ihre Füße zuverlässig und langfristig zu schützen.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-primary mb-3">Unsere Ziele für Sie</h3>
+  <div class="grid sm:grid-cols-2 gap-4 my-6">
+    {[
+      { titel: 'Lebensqualität erhalten', text: 'Ihre gewohnte Lebensqualität soll bestehen bleiben.' },
+      { titel: 'Mobilität bewahren', text: 'Ihre individuelle Mobilität langfristig sichern.' },
+      { titel: 'Füße schützen', text: 'Zuverlässiger und langfristiger Schutz Ihrer Füße.' },
+      { titel: 'Komplikationen vermeiden', text: 'Schwerwiegende Folgen des diabetischen Fußes verhindern.' },
+    ].map((z) => (
+      <div class="bg-bg-alt rounded-lg p-4">
+        <p class="font-semibold text-primary mb-1">{z.titel}</p>
+        <p class="text-sm text-text-light">{z.text}</p>
+      </div>
+    ))}
+  </div>
+
+  <h3 class="font-heading text-xl font-bold text-primary mb-3">Unsere Versorgung</h3>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li>Spezielle Diabetiker-Schutzschuhe mit Druckentlastung</li>
+    <li>Individuell gefertigte Weichpolster-Einlagen</li>
+    <li>Orthopädische Maßschuhe bei fortgeschrittenen Veränderungen</li>
+    <li>Regelmäßige Kontrolle und Anpassung</li>
+  </ul>
+
+  <p class="text-text-light leading-relaxed">
+    Volker Herbst hat sich auf die Versorgung diabetischer Füße spezialisiert. Vereinbaren Sie einen Beratungstermin in unserer Praxis in Magdeburg.
+  </p>
+</Leistung>

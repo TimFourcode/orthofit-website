@@ -1,0 +1,129 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, standorte } from '../data/site';
+---
+
+<Base
+  title="Kontakt"
+  description="Kontaktieren Sie OrthoFit Schuhtechnik in Magdeburg — Termin vereinbaren für orthopädische Maßschuhe, Einlagen, Bewegungsanalyse und BIOPATHOTEC Schmerzkonzept."
+>
+  <!-- Hero -->
+  <section class="bg-primary text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="font-heading text-3xl md:text-4xl font-bold mb-4">Kontakt & Anfahrt</h1>
+      <p class="text-white/80 text-lg max-w-2xl mx-auto">
+        Rufen Sie uns an — wir beraten Sie gerne persönlich und vereinbaren einen Termin mit Ihnen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Standorte -->
+  <section class="py-16 bg-bg-alt">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-8">
+        {standorte.map((s) => (
+          <div class="bg-white rounded-xl p-8 shadow-sm">
+            <div class="flex items-center gap-3 mb-1">
+              <h2 class="font-heading text-2xl font-bold text-primary">{s.name}</h2>
+              {s.hauptstandort && (
+                <span class="text-xs bg-accent/20 text-accent px-2 py-0.5 rounded font-medium">Hauptstandort</span>
+              )}
+            </div>
+
+            <!-- Adresse -->
+            <div class="mt-6 space-y-3">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div>
+                  <p class="text-text font-medium">{s.street}</p>
+                  <p class="text-text-light">{s.zip} {s.city}</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <a href={`tel:${s.phone.replace(/\s/g, '')}`} class="text-primary hover:text-primary-light font-semibold text-lg transition-colors">
+                  {s.phone}
+                </a>
+              </div>
+
+              {('fax' in s && s.fax) && (
+                <div class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                  </svg>
+                  <span class="text-text-light">Fax: {s.fax}</span>
+                </div>
+              )}
+
+              <div class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a href={`mailto:${s.email}`} class="text-primary hover:text-primary-light transition-colors">
+                  {s.email}
+                </a>
+              </div>
+            </div>
+
+            <!-- Öffnungszeiten -->
+            <div class="mt-6 pt-6 border-t border-bg-alt">
+              <h3 class="font-heading text-lg font-bold text-primary mb-3">Öffnungszeiten</h3>
+              <dl class="space-y-2">
+                {s.oeffnungszeiten.map((o) => (
+                  <div class="flex justify-between text-sm">
+                    <dt class="font-medium text-text">{o.tag}</dt>
+                    <dd class="text-text-light">{o.zeit}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+
+            <!-- Google Maps Placeholder -->
+            <div class="mt-6 bg-bg-alt rounded-lg aspect-video flex items-center justify-center text-sm text-text-light">
+              [Google Maps: {s.name}]
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hinweis -->
+  <section class="py-12 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-bg-alt rounded-xl p-6 md:p-8">
+        <h3 class="font-heading text-xl font-bold text-primary mb-3">Hinweis zur Kontaktaufnahme</h3>
+        <p class="text-text-light leading-relaxed mb-4">
+          Bei Kontaktaufnahme per E-Mail geben Sie bitte die gewünschte Filiale und eine Rückrufnummer an.
+          So können wir Sie schnellstmöglich zurückrufen und einen passenden Termin vereinbaren.
+        </p>
+        <p class="text-text-light leading-relaxed">
+          Bitte beachten Sie, dass eine telefonische Terminvereinbarung der schnellste Weg zu uns ist.
+          Unser Team hilft Ihnen gerne weiter.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary text-white text-center">
+    <div class="max-w-2xl mx-auto px-4">
+      <h2 class="font-heading text-3xl font-bold mb-4">Wir freuen uns auf Ihren Anruf</h2>
+      <p class="text-white/80 mb-8">Vereinbaren Sie jetzt einen Termin — wir beraten Sie persönlich und unverbindlich.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={`tel:${standorte[0].phone.replace(/\s/g, '')}`} class="bg-accent text-primary-dark font-semibold px-8 py-4 rounded-lg hover:bg-accent-light transition-colors text-lg">
+          Magdeburg: {standorte[0].phone}
+        </a>
+        <a href={`tel:${standorte[1].phone.replace(/\s/g, '')}`} class="border border-white/40 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-lg">
+          Schönhausen: {standorte[1].phone}
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

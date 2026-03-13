@@ -1,0 +1,46 @@
+---
+import Leistung from '../../layouts/Leistung.astro';
+---
+
+<Leistung title="BIOPATHOTEC Schmerzkonzept" description="Neuartiges biomechanisches Schmerzkonzept zur Behandlung von Beschwerden an Fuß, Knie, Hüfte und Wirbelsäule." icon="💡">
+  <h2 class="font-heading text-2xl font-bold text-primary mb-4">Schmerzen nachhaltig lindern — ohne Operation</h2>
+  <p class="text-text-light leading-relaxed mb-6">
+    Das BIOPATHOTEC Konzept ist ein neuartiges, biomechanisches und funktionell orientiertes Schmerzkonzept zur wirkungsvollen Behandlung von komplexen Schmerz- und Beschwerdebildern. Bei OrthoFit in Magdeburg setzen wir dieses innovative Verfahren seit Jahren erfolgreich ein.
+  </p>
+
+  <h3 class="font-heading text-xl font-bold text-primary mb-3">Der Ansatz: Ihre Füße als Fundament</h3>
+  <p class="text-text-light leading-relaxed mb-6">
+    Den Ansatzpunkt der BIOPATHOTEC Behandlung bilden die Füße als Fundament des Körpers. Durch den intelligenten und schmerzlindernden Einsatz der Bodenreaktionskräfte können Schmerzen spürbar gelindert und langfristige Schädigungen sowie unnötige Operationen vermieden werden.
+  </p>
+
+  <div class="bg-bg-alt rounded-xl p-6 my-8">
+    <h4 class="font-semibold text-primary mb-4">Behandlungsbereiche</h4>
+    <div class="grid sm:grid-cols-2 gap-4">
+      {[
+        { bereich: 'Fußschmerzen', text: 'Fersensporn, Plantarfasziitis, Spreizfuß und weitere Fußbeschwerden' },
+        { bereich: 'Knieschmerzen', text: 'Fehlbelastungen und Beschwerden im Kniegelenk' },
+        { bereich: 'Hüftbeschwerden', text: 'Schmerzen und Funktionseinschränkungen der Hüfte' },
+        { bereich: 'Wirbelsäule', text: 'Rückenschmerzen durch Fehlstatik im Bewegungsapparat' },
+      ].map((b) => (
+        <div class="bg-white rounded-lg p-4">
+          <p class="font-semibold text-primary mb-1">{b.bereich}</p>
+          <p class="text-sm text-text-light">{b.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <h3 class="font-heading text-xl font-bold text-primary mb-3">Wissenschaftliche Grundlage</h3>
+  <p class="text-text-light leading-relaxed mb-4">
+    Das BIOPATHOTEC Schmerzkonzept beruht auf wissenschaftlichen Erkenntnissen aus den Bereichen:
+  </p>
+  <ul class="list-disc pl-6 text-text-light space-y-2 mb-6">
+    <li>Sport- und Bewegungsanalyse</li>
+    <li>Rheumatologie</li>
+    <li>Sensomotorik</li>
+  </ul>
+
+  <p class="text-text-light leading-relaxed">
+    Orthopädie-Schuhmachermeister Volker Herbst und sein Team in Magdeburg verbinden diese Erkenntnisse mit jahrelanger praktischer Erfahrung — für eine Behandlung, die an der Ursache ansetzt, nicht nur am Symptom.
+  </p>
+</Leistung>

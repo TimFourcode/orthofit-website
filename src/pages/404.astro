@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+
+<Base title="Seite nicht gefunden" description="Die angeforderte Seite wurde nicht gefunden." noindex={true}>
+  <section class="py-24 text-center">
+    <div class="max-w-xl mx-auto px-4">
+      <p class="text-6xl mb-6">🔍</p>
+      <h1 class="font-heading text-4xl font-bold text-primary mb-4">Seite nicht gefunden</h1>
+      <p class="text-text-light text-lg mb-8">
+        Die von Ihnen gesuchte Seite existiert leider nicht oder wurde verschoben.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="bg-primary text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-light transition-colors">
+          Zur Startseite
+        </a>
+        <a href="/leistungen/" class="border border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-white transition-colors">
+          Unsere Leistungen
+        </a>
+      </div>
+      <p class="mt-8 text-text-light text-sm">
+        Oder rufen Sie uns an: <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="text-primary font-medium hover:text-primary-light">{site.phone}</a>
+      </p>
+    </div>
+  </section>
+</Base>
