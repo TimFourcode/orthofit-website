@@ -4,7 +4,8 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.orthofit-schuhtechnik.de',
+  site: 'https://timfourcode.github.io',
+  base: '/orthofit-website',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

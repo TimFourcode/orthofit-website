@@ -121,7 +121,7 @@ import { site, standorte } from '../data/site';
       <h2 class="font-heading text-3xl font-bold mb-4">Wir freuen uns auf Ihren Anruf</h2>
       <p class="text-white/80 mb-8">Vereinbaren Sie jetzt einen Termin — wir beraten Sie persönlich und unverbindlich.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href={`tel:${standorte[0].phone.replace(/\s/g, '')}`} class="bg-accent text-primary-dark font-semibold px-8 py-4 rounded-lg hover:bg-accent-light transition-colors text-lg">
+        <a href={`tel:${standorte[0].phone.replace(/\s/g, '')}`} class="bg-accent text-white font-semibold px-8 py-4 rounded-lg hover:bg-accent-light transition-colors text-lg">
           Magdeburg: {standorte[0].phone}
         </a>
         <a href={`tel:${standorte[1].phone.replace(/\s/g, '')}`} class="border border-white/40 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-lg">
