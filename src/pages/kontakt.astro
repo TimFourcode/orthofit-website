@@ -84,9 +84,13 @@ import { site, standorte } from '../data/site';
               </dl>
             </div>
 
-            <!-- Google Maps Placeholder -->
-            <div class="mt-6 bg-bg-alt rounded-lg aspect-video flex items-center justify-center text-sm text-text-light">
-              [Google Maps: {s.name}]
+            <!-- Anfahrtskarte -->
+            <div class="mt-6">
+              {s.hauptstandort ? (
+                <img src="/images/karte-magdeburg.webp" alt="Anfahrtskarte OrthoFit Magdeburg – Universitätsplatz 11" class="w-full rounded-lg" width="592" height="384" loading="lazy" />
+              ) : (
+                <img src="/images/karte-schoenhausen.webp" alt="Anfahrtskarte OrthoFit Schönhausen – Bismarckstraße 8" class="w-full rounded-lg" width="901" height="560" loading="lazy" />
+              )}
             </div>
           </div>
         ))}

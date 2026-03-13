@@ -86,9 +86,7 @@ import { site, standorte, leistungen } from '../data/site';
             <footer class="text-sm text-text-light mt-1 not-italic">— Volker Herbst, Geschäftsführer</footer>
           </blockquote>
         </div>
-        <div class="bg-bg-alt rounded-2xl aspect-[4/3] flex items-center justify-center text-text-light">
-          <p class="text-sm">[Foto: Team / Werkstatt]</p>
-        </div>
+        <img src="/images/foto-laden-magdeburg-web.webp" alt="OrthoFit Schuhtechnik Ladengeschäft am Universitätsplatz in Magdeburg" class="rounded-2xl w-full object-cover shadow-lg" width="1600" height="1067" loading="lazy" />
       </div>
     </div>
   </section>
@@ -122,8 +120,12 @@ import { site, standorte, leistungen } from '../data/site';
                 ))}
               </dl>
             </div>
-            <div class="mt-4 bg-bg-alt rounded-lg aspect-video flex items-center justify-center text-xs text-text-light">
-              [Google Maps: {s.name}]
+            <div class="mt-4">
+              {s.hauptstandort ? (
+                <img src="/images/karte-magdeburg.webp" alt="Anfahrtskarte OrthoFit Magdeburg – Universitätsplatz 11" class="w-full rounded-lg" width="592" height="384" loading="lazy" />
+              ) : (
+                <img src="/images/karte-schoenhausen.webp" alt="Anfahrtskarte OrthoFit Schönhausen – Bismarckstraße 8" class="w-full rounded-lg" width="901" height="560" loading="lazy" />
+              )}
             </div>
           </div>
         ))}
