@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://timfourcode.github.io',
-  base: '/orthofit-website',
+  base: '/orthofit-website/',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
