@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#2b5c8a"/>
+  <rect x="40" y="40" width="1120" height="550" rx="16" fill="#1a3d5c" opacity="0.5"/>
+  <!-- Logo feet -->
+  <g transform="translate(100, 180) scale(4)" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M11 5c0 0-1.5 6-2 10s-1.5 6-.5 8c1 2 3 2.5 5 1.5s1.5-3 .5-5"/>
+    <path d="M19 5c0 0 1.5 6 2 10s1.5 6 .5 8c-1 2-3 2.5-5 1.5s-1.5-3-.5-5"/>
+  </g>
+  <!-- Text -->
+  <text x="360" y="260" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="700" fill="#fff">OrthoFit</text>
+  <text x="360" y="330" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#e8922d">Schuhtechnik GmbH</text>
+  <text x="360" y="400" font-family="Inter, system-ui, sans-serif" font-size="24" fill="rgba(255,255,255,0.7)">Orthopädie-Schuhtechnik in Magdeburg</text>
+  <text x="360" y="450" font-family="Inter, system-ui, sans-serif" font-size="20" fill="rgba(255,255,255,0.5)">Maßschuhe · Einlagen · Bewegungsanalyse · Schmerzkonzept</text>
+  <!-- Accent line -->
+  <rect x="360" y="280" width="80" height="4" rx="2" fill="#e8922d"/>
+</svg>
