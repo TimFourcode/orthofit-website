@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site, standorte } from '../data/site';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base
@@ -87,9 +88,9 @@ import { site, standorte } from '../data/site';
             <!-- Anfahrtskarte -->
             <div class="mt-6">
               {s.hauptstandort ? (
-                <img src="/images/karte-magdeburg.webp" alt="Anfahrtskarte OrthoFit Magdeburg – Universitätsplatz 11" class="w-full rounded-lg" width="592" height="384" loading="lazy" />
+                <img src={`${base}images/karte-magdeburg.webp`} alt="Anfahrtskarte OrthoFit Magdeburg – Universitätsplatz 11" class="w-full rounded-lg" width="592" height="384" loading="lazy" />
               ) : (
-                <img src="/images/karte-schoenhausen.webp" alt="Anfahrtskarte OrthoFit Schönhausen – Bismarckstraße 8" class="w-full rounded-lg" width="901" height="560" loading="lazy" />
+                <img src={`${base}images/karte-schoenhausen.webp`} alt="Anfahrtskarte OrthoFit Schönhausen – Bismarckstraße 8" class="w-full rounded-lg" width="901" height="560" loading="lazy" />
               )}
             </div>
           </div>

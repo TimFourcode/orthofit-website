@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site, standorte, leistungen } from '../data/site';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base
@@ -9,7 +10,7 @@ import { site, standorte, leistungen } from '../data/site';
 >
   <!-- Hero -->
   <section class="relative bg-primary text-white overflow-hidden">
-    <img src="/images/foto-laden-magdeburg-web.webp" alt="" class="absolute inset-0 w-full h-full object-cover" width="1600" height="1067" loading="eager" />
+    <img src={`${base}images/foto-laden-magdeburg-web.webp`} alt="" class="absolute inset-0 w-full h-full object-cover" width="1600" height="1067" loading="eager" />
     <div class="absolute inset-0 bg-primary/80"></div>
     <div class="relative max-w-6xl mx-auto px-4 py-20 md:py-28">
       <div class="max-w-2xl">
@@ -26,7 +27,7 @@ import { site, standorte, leistungen } from '../data/site';
           <a href={`tel:${site.phone.replace(/\s/g, '')}`} class="bg-accent text-white font-semibold px-8 py-4 rounded-lg hover:bg-accent-light transition-colors text-center text-lg">
             Jetzt Termin vereinbaren
           </a>
-          <a href="/leistungen/schmerzkonzept/" class="border border-white/40 text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-center">
+          <a href={`${base}leistungen/schmerzkonzept/`} class="border border-white/40 text-white px-8 py-4 rounded-lg hover:bg-white/10 transition-colors text-center">
             BIOPATHOTEC entdecken
           </a>
         </div>
@@ -60,7 +61,7 @@ import { site, standorte, leistungen } from '../data/site';
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {leistungen.map((l) => (
-          <a href={`/leistungen/${l.slug}/`} class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group">
+          <a href={`${base}leistungen/${l.slug}/`} class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow group">
             <div class="text-3xl mb-3">{l.icon}</div>
             <h3 class="font-semibold text-lg text-primary group-hover:text-primary-light transition-colors mb-2">{l.title}</h3>
             <p class="text-sm text-text-light">{l.kurz}</p>
@@ -88,7 +89,7 @@ import { site, standorte, leistungen } from '../data/site';
             <footer class="text-sm text-text-light mt-1 not-italic">— Volker Herbst, Geschäftsführer</footer>
           </blockquote>
         </div>
-        <img src="/images/foto-laden-magdeburg-web.webp" alt="OrthoFit Schuhtechnik Ladengeschäft am Universitätsplatz in Magdeburg" class="rounded-2xl w-full object-cover shadow-lg" width="1600" height="1067" loading="lazy" />
+        <img src={`${base}images/foto-laden-magdeburg-web.webp`} alt="OrthoFit Schuhtechnik Ladengeschäft am Universitätsplatz in Magdeburg" class="rounded-2xl w-full object-cover shadow-lg" width="1600" height="1067" loading="lazy" />
       </div>
     </div>
   </section>
@@ -124,9 +125,9 @@ import { site, standorte, leistungen } from '../data/site';
             </div>
             <div class="mt-4">
               {s.hauptstandort ? (
-                <img src="/images/karte-magdeburg.webp" alt="Anfahrtskarte OrthoFit Magdeburg – Universitätsplatz 11" class="w-full rounded-lg" width="592" height="384" loading="lazy" />
+                <img src={`${base}images/karte-magdeburg.webp`} alt="Anfahrtskarte OrthoFit Magdeburg – Universitätsplatz 11" class="w-full rounded-lg" width="592" height="384" loading="lazy" />
               ) : (
-                <img src="/images/karte-schoenhausen.webp" alt="Anfahrtskarte OrthoFit Schönhausen – Bismarckstraße 8" class="w-full rounded-lg" width="901" height="560" loading="lazy" />
+                <img src={`${base}images/karte-schoenhausen.webp`} alt="Anfahrtskarte OrthoFit Schönhausen – Bismarckstraße 8" class="w-full rounded-lg" width="901" height="560" loading="lazy" />
               )}
             </div>
           </div>

@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { site, standorte } from '../../data/site';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base
@@ -25,7 +26,7 @@ import { site, standorte } from '../../data/site';
   <!-- Banner -->
   <section class="bg-white pt-8">
     <div class="max-w-4xl mx-auto px-4">
-      <img src="/images/banner-sport-adidas-web.webp" alt="Movecontrol Sports – Profi-Athleten weltweit tragen movecontrol sports Einlagen" class="w-full rounded-xl mb-8" width="1920" height="1080" loading="lazy" />
+      <img src={`${base}images/banner-sport-adidas-web.webp`} alt="Movecontrol Sports – Profi-Athleten weltweit tragen movecontrol sports Einlagen" class="w-full rounded-xl mb-8" width="1920" height="1080" loading="lazy" />
     </div>
   </section>
 

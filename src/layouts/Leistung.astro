@@ -9,7 +9,8 @@ interface Props {
 }
 
 const { title, description, icon } = Astro.props;
-const currentSlug = Astro.url.pathname.replace('/leistungen/', '').replace('/', '');
+const base = import.meta.env.BASE_URL;
+const currentSlug = Astro.url.pathname.replace(`${base}leistungen/`, '').replace('/', '');
 const andereLeistungen = leistungen.filter(l => l.slug !== currentSlug).slice(0, 3);
 ---
 
@@ -47,7 +48,7 @@ const andereLeistungen = leistungen.filter(l => l.slug !== currentSlug).slice(0,
       <h3 class="font-heading text-xl font-bold text-primary mb-6">Weitere Leistungen</h3>
       <div class="grid sm:grid-cols-3 gap-4">
         {andereLeistungen.map((l) => (
-          <a href={`/leistungen/${l.slug}/`} class="bg-bg-alt rounded-lg p-4 hover:shadow-md transition-shadow group">
+          <a href={`${base}leistungen/${l.slug}/`} class="bg-bg-alt rounded-lg p-4 hover:shadow-md transition-shadow group">
             <div class="text-2xl mb-2">{l.icon}</div>
             <h4 class="font-semibold text-primary group-hover:text-primary-light text-sm">{l.title}</h4>
           </a>

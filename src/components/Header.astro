@@ -1,6 +1,7 @@
 ---
 import { site, navigation } from '../data/site';
 
+const base = import.meta.env.BASE_URL;
 const currentPath = Astro.url.pathname;
 ---
 
@@ -31,8 +32,8 @@ const currentPath = Astro.url.pathname;
 
   <!-- Main Nav -->
   <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-    <a href="/" class="flex items-center gap-3">
-      <img src="/images/logo-orthofit.webp" alt="OrthoFit Schuhtechnik GmbH" class="h-10 w-auto" />
+    <a href={base} class="flex items-center gap-3">
+      <img src={`${base}images/logo-orthofit.webp`} alt="OrthoFit Schuhtechnik GmbH" class="h-10 w-auto" />
       <span class="text-sm text-text-light hidden sm:block">Schuhtechnik Magdeburg</span>
     </a>
 
@@ -41,7 +42,7 @@ const currentPath = Astro.url.pathname;
       {navigation.map((item) => (
         <li class="relative group">
           <a
-            href={item.href}
+            href={`${base}${item.href.slice(1)}`}
             class:list={[
               'py-2 transition-colors',
               currentPath === item.href || currentPath.startsWith(item.href + '/') && item.href !== '/'
@@ -58,7 +59,7 @@ const currentPath = Astro.url.pathname;
             <ul class="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 min-w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
               {item.children.map((child) => (
                 <li>
-                  <a href={child.href} class="block px-4 py-2 text-sm text-text hover:bg-bg-alt hover:text-primary transition-colors">
+                  <a href={`${base}${child.href.slice(1)}`} class="block px-4 py-2 text-sm text-text hover:bg-bg-alt hover:text-primary transition-colors">
                     {child.label}
                   </a>
                 </li>
@@ -85,7 +86,7 @@ const currentPath = Astro.url.pathname;
     <ul class="px-4 py-4 space-y-3">
       {navigation.map((item) => (
         <li>
-          <a href={item.href} class="block py-2 text-text hover:text-primary font-medium">{item.label}</a>
+          <a href={`${base}${item.href.slice(1)}`} class="block py-2 text-text hover:text-primary font-medium">{item.label}</a>
           {'children' in item && (
             <ul class="pl-4 mt-1 space-y-1">
               {item.children.map((child) => (
